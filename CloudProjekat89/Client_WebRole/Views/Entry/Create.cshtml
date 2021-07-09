@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new entry</h2>
+
+<form action="~/Entry/CreateNew" method="post">
+    <table>
+        <tr>
+            <td>Id(rowkey):</td>
+            <td><input type="text" name="rowKey" /></td>
+        </tr>
+        <tr>
+            <td>Quantity:</td>
+            <td><input type="number" step="0.1" min="0.1" name="quantity" /></td>
+        </tr>
+        <tr>
+            <td>Manufacturer:</td>
+            <td><input type="text" name="manufacturer"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</form>

@@ -1,0 +1,34 @@
+﻿@using BillEntryProductService_Data
+@model BillEntryProductService_Data.BillEntity
+
+@{
+    ViewBag.Title = "Update";
+}
+
+<h2>Update bill</h2>
+
+<form action="~/Bill/UpdateExecute" method="post">
+    <table>
+        <tr>
+            <td>Id(rowKey):</td>
+            <td>@Model.RowKey</td>
+            <input type="hidden" name="rowKey" value="@Model.RowKey" />
+        </tr>
+        <tr>
+            <td>Current creationTime: @Model.CreationTime</td>
+        </tr>
+        <tr>
+            <td>Update creation time:</td>
+            <td><input type="date" name="creationTime" value="@Model.CreationTime" /></td>
+        </tr>
+        <tr>
+            <td>Number of products:</td>
+            <td><input type="number" min="1" name="numOfProducts" value="@Model.NumOfProducts"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Update" />
+            </td>
+        </tr>
+    </table>
+</form>

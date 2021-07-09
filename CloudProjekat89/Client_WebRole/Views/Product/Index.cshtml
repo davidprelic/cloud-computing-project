@@ -1,0 +1,41 @@
+﻿@using BillEntryProductService_Data
+
+@model IEnumerable<BillEntryProductService_Data.ProductEntity>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div>
+    <table border="1">
+        <tr bgcolor="lightgrey">
+            <th>Name</th>
+            <th>Price</th>
+        </tr>
+
+        @foreach (ProductEntity p in Model)
+        {
+            <tr>
+                <td>@p.Name</td>
+                <td>@p.Price</td>
+                <td>
+                    <form action="~/Product/Update" method="post">
+                        <input type="hidden" name="rowKey" value="@p.RowKey" />
+                        <input type="submit" value="Update product" />
+                    </form>
+                    <form action="~/Product/Delete" method="post">
+                        <input type="hidden" name="rowKey" value="@p.RowKey" />
+                        <input type="submit" value="Delete product" />
+                    </form>
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

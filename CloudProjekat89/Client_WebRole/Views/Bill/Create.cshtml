@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create new bill</h2>
+
+<form action="~/Bill/CreateNew" method="post">
+    <table>
+        <tr>
+            <td>Id(rowkey):</td>
+            <td><input type="text" name="rowKey" /></td>
+        </tr>
+        <tr>
+            <td>Creation time:</td>
+            <td><input type="date" name="creationTime" /></td>
+        </tr>
+        <tr>
+            <td>Number of products:</td>
+            <td><input type="number" min="1" name="numOfProducts"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="Create" />
+            </td>
+        </tr>
+    </table>
+</form>
